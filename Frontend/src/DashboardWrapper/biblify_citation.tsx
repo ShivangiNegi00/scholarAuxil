@@ -49,7 +49,8 @@ const BibifyClone: React.FC = () => {
   const [searchType, setSearchType] = useState<'book' | 'website'>('book');
 
   // Use Flask backend as proxy
-  const API_BASE = 'http://localhost:5000';
+ const API_BASE = import.meta.env.VITE_BACKEND_URL;
+
 
   // Load citation styles on component mount
   useEffect(() => {

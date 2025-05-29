@@ -23,6 +23,7 @@ type AskPromptDrawerProps = {
   };
 };
 
+
 const AskPromptDrawer: React.FC<AskPromptDrawerProps> = ({
   open,
   onClose,
@@ -46,6 +47,8 @@ const AskPromptDrawer: React.FC<AskPromptDrawerProps> = ({
     continuous: true,
     useLegacyResults: false,
   });
+  const API_BASE = import.meta.env.VITE_BACKEND_URL;
+
 
   const promptSuggestions = [
     '🔍 Summarize a research paper(TL;DR)',
@@ -137,7 +140,7 @@ const AskPromptDrawer: React.FC<AskPromptDrawerProps> = ({
       }
   
       // Sending the request to the backend
-      const response = await fetch('http://localhost:5000/api/chat', {
+      const response = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         body: formData, 
       });
