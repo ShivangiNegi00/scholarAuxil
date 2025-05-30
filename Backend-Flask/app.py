@@ -27,7 +27,7 @@ ALLOWED_EXTENSIONS = {'pdf', 'txt', 'doc', 'docx'}
 app = Flask(__name__)
 CORS(app)
 # CORS(app,origins=["http://localhost:5173"]) 
-CORS(app, origins=["https://ominous-sniffle-9rrjg7997x6397q4-5173.app.github.dev/"])
+# CORS(app, origins=["https://ominous-sniffle-9rrjg7997x6397q4-5173.app.github.dev/"])
 
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 app.config['SECRET_KEY'] = os.environ['FLASK_SECRET_KEY']
